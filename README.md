@@ -1,4 +1,4 @@
-algodust
+algodast
 ========
 
 Algorithmen und Datenstrukturen.
