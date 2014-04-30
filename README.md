@@ -2,7 +2,7 @@
 
 Algorithmen und Datenstrukturen.
 
-## Running the tests:
+## Running the tests
 
 ```
 npm install
