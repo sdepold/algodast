@@ -3,7 +3,7 @@ var expect = require('expect.js')
   , SLL    = require(path.resolve(__dirname, '..', 'src', 'chapter-2-0'))
   , fun    = require(path.resolve(__dirname, '..', 'src', 'chapter-2-3'))
 
-describe('chapter-2-2', function() {
+describe('chapter-2-3', function() {
   beforeEach(function() {
     this.list = new SLL()
     this.list.push(1)
