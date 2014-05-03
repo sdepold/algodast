@@ -1,0 +1,30 @@
+Listen
+
+- Definition
+  - Dynamische Datenstruktur
+  - Ermöglich Speicherung von miteinander in Beziehung stehenden Objekten
+  - Länge dynamisch / im Vorhinein nicht bestimmt
+  - Liste nutzt Zeiger, welche auf die jeweils folgenden Knoten / Speicherzellen zeigen
+  - Jedes Element hat genau einen Nachfolger
+  - Zyklische Listen = Liste, deren letztes Element auf einen anderen Knoten der Liste zeigt.
+  - Liste hat einen Zeiger auf den Kopf- und Schwanzknoten
+
+Einfach verkettete Liste
+- Definition
+  - Knoten der Liste haben Datum und Zeiger auf Nachfolger
+
+- Vorteile
+  - Elemente können sehr schnell am Anfang der Liste eingefügt werden
+  - Sehr geringer Speicherbedarf
+  - Im Gegensatz zu einem Array ist das Einfügen problemlos möglich, ohne dass
+    der komplette Datensatz bei jeder Vergrößerung umkopiert werden muss.
+
+- Nachteile
+  - Es ist aufwändig nach Daten zu suchen, Knoten einzufügen, zu löschen und die
+    Liste zu sortieren, da über jedes einzelne Element gegangen (iteriert)
+    werden und das Einfügen an der ersten und der letzten Stelle gesondert
+    behandelt werden muss.
+
+Doppelt verkettete Liste
+- Definition
+  - Knoten der Listen haben Datum sowie Zeiger auf Vorgänger und Nachfolger
