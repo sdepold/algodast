@@ -9,7 +9,8 @@ var SLL = module.exports = function() {
 }
 
 SLL.createNode = function(data) {
-  return { data: data || null, next: null }
+  data = (typeof data === 'undefined') ? null : data
+  return { data: data, next: null }
 }
 
 SLL.prototype.push = function(data) {
