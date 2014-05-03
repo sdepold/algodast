@@ -1,5 +1,6 @@
 /*
   Experimenting with singly linked lists.
+  Good article: http://www.i-programmer.info/programming/javascript/5328-javascript-data-structures-the-linked-list.html?start=1
 */
 
 var SLL = module.exports = function() {

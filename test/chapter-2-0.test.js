@@ -7,6 +7,7 @@ describe('chapter-2-0', function() {
     beforeEach(function() {
       this.list = new SLL()
     })
+
     it('sets the head and the tail to null by default', function() {
       expect(this.list.head).to.eql(null)
       expect(this.list.tail).to.eql(null)
