@@ -31,5 +31,56 @@ describe('chapter-2-0', function() {
       expect(this.list.head.next.data).to.eql(1)
       expect(this.list.head.next.next).to.eql(null)
     })
+
+    it('correctly removes', function() {
+      this.list.push(1)
+      this.list.push(2)
+      this.list.push(3)
+      this.list.remove(2)
+
+      expect(this.list.head.data).to.eql(1)
+      expect(this.list.head.next.data).to.eql(3)
+      expect(this.list.head.next.next).to.eql(null)
+
+      this.list.remove(1)
+      expect(this.list.head.data).to.eql(3)
+      expect(this.list.head.next).to.eql(null)
+    })
+
+    it('correctly inserts', function() {
+      this.list.push(1)
+      this.list.insert(1, 2)
+      this.list.insert(1, 3)
+
+      expect(this.list.head.data).to.eql(1)
+      expect(this.list.head.next.data).to.eql(3)
+      expect(this.list.head.next.next.data).to.eql(2)
+      expect(this.list.head.next.next.next).to.eql(null)
+    })
+
+    it('correctly indexes', function() {
+      this.list.push(1)
+      this.list.push(2)
+      this.list.push(3)
+
+      expect(this.list.at(0).data).to.eql(1)
+      expect(this.list.at(1).data).to.eql(2)
+      expect(this.list.at(2).data).to.eql(3)
+      expect(this.list.at(3)).to.eql(null)
+    })
+
+    it('correctly calls the function for each item', function() {
+      var sum = 0
+
+      this.list.push(1)
+      this.list.push(2)
+      this.list.push(3)
+
+      this.list.each(function(node) {
+        sum += node.data
+      })
+
+      expect(sum).to.eql(6)
+    })
   })
 })

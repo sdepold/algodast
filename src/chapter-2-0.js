@@ -30,3 +30,61 @@ SLL.prototype.unshift = function(data) {
     this.head = node
   }
 }
+
+SLL.prototype.remove = function(data) {
+  var current = this.head
+    , prev    = null
+
+  while (current) {
+    if (current.data === data) {
+      if (prev === null) {
+        this.head = current.next
+      } else {
+        prev.next = current.next
+      }
+    }
+
+    prev    = current
+    current = current.next
+  }
+}
+
+SLL.prototype.insert = function(needle, data) {
+  var current = this.head
+
+  while (current) {
+    if (current.data === needle) {
+      var node = SLL.createNode(data)
+
+      node.next    = current.next
+      current.next = node
+    }
+
+    current = current.next
+  }
+}
+
+SLL.prototype.at = function(index) {
+  var current = this.head
+
+  while (index !== 0) {
+    if (current.next) {
+      current = current.next
+    } else {
+      return null
+    }
+
+    index--
+  }
+
+  return current
+}
+
+SLL.prototype.each = function(fun) {
+  var current = this.head
+
+  while (current) {
+    fun(current)
+    current = current.next
+  }
+}
