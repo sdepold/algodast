@@ -1,4 +1,5 @@
 Listen
+======
 
 - Definition
   - Dynamische Datenstruktur
@@ -28,3 +29,25 @@ Einfach verkettete Liste
 Doppelt verkettete Liste
 - Definition
   - Knoten der Listen haben Datum sowie Zeiger auf Vorgänger und Nachfolger
+
+
+
+
+Warteschlange / Queue
+=====================
+
+- FIFO
+- Aufnehmen von Objekten: enqueue (Ans Ende der Schlange)
+- Entfernen von Objekten: dequeue (Vom Anfang der Schlange)
+- Geeignet für asynchrone Prozesse
+
+
+
+
+Stapelspeicher / Stack
+======================
+
+- LIFO
+- Hinzufügen von Objekten: push (Auf das oberste Element des Stapels)
+- Entfernen von Objekten: pop (Das oberste Element des Stapels)
+- Lesen von Objekten: peek (Das oberste Element des Stapels)
