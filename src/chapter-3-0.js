@@ -23,6 +23,38 @@ Stack.prototype.pop = function() {
   return node
 }
 
+Stack.prototype.length = function() {
+  var length  = 0
+    , current = this.top
+
+  while (current) {
+    length++
+    current = current.next
+  }
+
+  return length
+}
+
+Stack.prototype.isEmpty = function() {
+  return this.top === null
+}
+
+Stack.prototype.peek = function() {
+  return this.top
+}
+
+Stack.prototype.toArray = function() {
+  var result  = []
+    , current = this.top
+
+  while (current) {
+    result.push(current.data)
+    current = current.next
+  }
+
+  return result
+}
+
 Queue = function() {
   this.head = null
   this.tail = null
