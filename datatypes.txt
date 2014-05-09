@@ -51,3 +51,28 @@ Stapelspeicher / Stack
 - Hinzufügen von Objekten: push (Auf das oberste Element des Stapels)
 - Entfernen von Objekten: pop (Das oberste Element des Stapels)
 - Lesen von Objekten: peek (Das oberste Element des Stapels)
+
+
+
+Bäume
+=====
+
+- Hierarchische Strukturen
+- Bestehen aus Knoten und Teilbäumen
+- Oberster Knoten = Wurzel
+- Bei Binärbäumen hat jeder Knoten zwei Unterbäume
+- Knoten enthalten Informationen
+
+- Ein Baum b ist geordnet / ist ein Suchbaum, wenn
+  - b leer ist oder wenn
+  - für jeden nicht leeren Teilbaum t gilt:
+    - Die Informationen von t ist
+      - größer oder gleich als alle Informationen des linken Teilbaums
+      - kleiner oder gleich als alle Informationen des rechten Teilbaums
+
+
+- Methoden
+  - isEmpty => Wurzel == nil?
+  - inOrderTraversal -> left, current, right
+  - preOrderTraversal -> current, left, right
+  - postOrderTraversal -> left, right, current
