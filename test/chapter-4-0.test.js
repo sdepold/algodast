@@ -1,6 +1,7 @@
 var expect = require('expect.js')
   , path   = require('path')
   , Tree   = require(path.resolve(__dirname, '..', 'src', 'chapter-4-0')).BinTree
+  , BSTree = require(path.resolve(__dirname, '..', 'src', 'chapter-4-0')).BinSearchTree
 
 describe('chapter-4-0', function() {
   describe('Binary Tree', function() {
@@ -42,6 +43,28 @@ describe('chapter-4-0', function() {
         var result = ""
         this.tree.postOrder(function(node) { result += node.data })
         expect(result).to.eql("AASMTEERELP")
+      })
+    })
+  })
+
+  describe('Binary Search Tree', function() {
+    beforeEach(function() {
+      this.tree = new BSTree()
+    })
+
+    describe('insertNode', function() {
+      it('inserts the nodes in the right order', function() {
+        this.tree.insertNode(10)
+        this.tree.insertNode(5)
+        this.tree.insertNode(7)
+        this.tree.insertNode(3)
+        this.tree.insertNode(15)
+        this.tree.insertNode(12)
+        this.tree.insertNode(20)
+
+        var result = ""
+        this.tree.inOrder(function(node) { result += node.data })
+        expect(result).to.eql("35710121520")
       })
     })
   })

@@ -33,6 +33,36 @@ BinTree.prototype.postOrder = function(fun, node) {
   fun(node)
 }
 
+var BinSearchTree = function() {
+  this.root = null
+}
+
+BinSearchTree.prototype = Object.create(BinTree.prototype)
+BinSearchTree.prototype.constructor = BinSearchTree
+
+BinSearchTree.prototype.insertNode = function(data, parent) {
+  if (!this.root) {
+    this.root = BinTree.createNode(data)
+  } else if (this.root && !parent) {
+    this.insertNode(data, this.root)
+  } else if (parent) {
+    if (parent.data > data) {
+      if (parent.left) {
+        this.insertNode(data, parent.left)
+      } else {
+        parent.left = BinTree.createNode(data)
+      }
+    } else {
+      if (parent.right) {
+        this.insertNode(data, parent.right)
+      } else {
+        parent.right = BinTree.createNode(data)
+      }
+    }
+  }
+}
+
 module.exports = {
-  BinTree: BinTree
+  BinTree: BinTree,
+  BinSearchTree: BinSearchTree
 }
