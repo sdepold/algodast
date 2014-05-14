@@ -90,3 +90,13 @@ SLL.prototype.each = function(fun) {
     current = current.next
   }
 }
+
+SLL.prototype.toArray = function() {
+  var result = []
+
+  this.each(function(node) {
+    result.push(node.data)
+  })
+
+  return result
+}
