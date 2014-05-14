@@ -33,6 +33,30 @@ BinTree.prototype.postOrder = function(fun, node) {
   fun(node)
 }
 
+BinTree.prototype.maxDepth = function(root) {
+  if (typeof root === 'undefined') {
+    root = this.root
+  }
+
+  if (root === null) {
+    return 0
+  } else {
+    return 1 + Math.max(this.maxDepth(root.left), this.maxDepth(root.right))
+  }
+}
+
+BinTree.prototype.minDepth = function(root) {
+  if (typeof root === 'undefined') {
+    root = this.root
+  }
+
+  if (root === null) {
+    return 0
+  } else {
+    return 1 + Math.min(this.minDepth(root.left), this.minDepth(root.right))
+  }
+}
+
 var BinSearchTree = function() {
   this.root = null
 }

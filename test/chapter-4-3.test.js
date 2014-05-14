@@ -5,7 +5,6 @@ var expect = require('expect.js')
 describe('chapter-4-3', function() {
   it('transforms an array into a binary search tree', function() {
     var tree   = fun([1,2,3,4,5,6,7])
-      , result = ""
 
     expect(tree.data).to.eql(4)
     expect(tree.left.data).to.eql(2)
