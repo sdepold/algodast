@@ -80,3 +80,48 @@ var merge = function(leftArr, rightArr) {
 
   return result
 }
+
+module.exports.quickSort = function(arr, left, right) {
+  if (typeof left === 'undefined') {
+    return module.exports.quickSort(arr, 0, arr.length - 1)
+  } else if (left < right) {
+    var divisor = orderArr(arr, left, right)
+    module.exports.quickSort(arr, left, divisor - 1)
+    module.exports.quickSort(arr, divisor + 1, right)
+    return arr
+  } else {
+    return arr
+  }
+
+}
+
+var orderArr = function(arr, left, right) {
+  var i = left
+    , j = right
+    , p = arr[right]
+
+  // solange i an j nicht vorbeigelaufen ist
+  while (i < j) {
+    while ((arr[i] <= p) && (i < right)) {
+      i++
+    }
+
+    while ((arr[j] >= p) && (j > left)) {
+      j--
+    }
+
+    if (i < j) {
+      var tmp = arr[i]
+      arr[i]  = arr[j]
+      arr[j]  = tmp
+    }
+  }
+
+  if (arr[i] > p) {
+    var tmp     = arr[i]
+    arr[i]      = arr[right]
+    arr[right]  = tmp
+  }
+
+  return i
+}

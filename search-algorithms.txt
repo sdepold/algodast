@@ -1,0 +1,17 @@
+MergeSort
+- Methodname: mergeSort(arr)
+- Best, Worst, Average: O(n*log(n))
+- if array length === 1
+  - return array
+- else
+  - left = mergeSort(arr[0..arr.length / 2])
+  - right = mergeSort(arr[arr.length / 2..arr.length])
+  - return merge(left, right)
+- merge creates an array and loops as long as left and right has elements
+- it adds for each iteration the smallest item of both arrays at index 0 into the result array
+- once one of the arrays has no further items, the other items will just be append to the array
+- the resulted array gets returns
+
+QuickSort
+- Best, Average: O(n*log(n))
+- Worst: O(n^2)
