@@ -62,23 +62,13 @@ var merge = function(leftArr, rightArr) {
 
   while((leftArr.length > 0) && (rightArr.length > 0)) {
     if (leftArr[0] <= rightArr[0]) {
-      result.push(leftArr[0])
-      leftArr = leftArr.slice(1)
+      result.push(leftArr.shift())
     } else {
-      result.push(rightArr[0])
-      rightArr = rightArr.slice(1)
+      result.push(rightArr.shift())
     }
   }
 
-  while(leftArr.length > 0) {
-    result.push(leftArr.pop())
-  }
-
-  while(rightArr.length > 0) {
-    result.push(rightArr.pop())
-  }
-
-  return result
+  return result.concat(leftArr).concat(rightArr)
 }
 
 module.exports.quickSort = function(arr, left, right) {
